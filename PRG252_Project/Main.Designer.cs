@@ -32,12 +32,13 @@ namespace PRG252_Project
             this.lblStudentID2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentView = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.studentView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStudentID2
@@ -59,6 +60,7 @@ namespace PRG252_Project
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -67,13 +69,13 @@ namespace PRG252_Project
             this.txtSearch.Size = new System.Drawing.Size(115, 20);
             this.txtSearch.TabIndex = 26;
             // 
-            // dataGridView1
+            // studentView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(405, 307);
-            this.dataGridView1.TabIndex = 25;
+            this.studentView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentView.Location = new System.Drawing.Point(31, 52);
+            this.studentView.Name = "studentView";
+            this.studentView.Size = new System.Drawing.Size(405, 307);
+            this.studentView.TabIndex = 25;
             // 
             // button4
             // 
@@ -85,6 +87,7 @@ namespace PRG252_Project
             this.button4.TabIndex = 24;
             this.button4.Text = "View";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label4
             // 
@@ -116,23 +119,37 @@ namespace PRG252_Project
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(348, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Back To Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(458, 441);
+            this.ClientSize = new System.Drawing.Size(481, 441);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblStudentID2);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.studentView);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,10 +160,11 @@ namespace PRG252_Project
         private System.Windows.Forms.Label lblStudentID2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView studentView;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -50,5 +50,65 @@ namespace PRG252_Project
             }
         }
 
+        public List<Student> View()
+        {
+            List<Student> list = new List<Student>();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"SELECT StudentNumber, StudentName, StudentSurname, DateOfBirth, Gender, PhoneNumber, Address, ModuleCode FROM tbl_Student", conn);
+
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Student s = new Student(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), Convert.ToInt32(reader[5]), reader[6].ToString());
+                    list.Add(s);
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return list;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public List<Student> Search(int id)
+        {
+            List<Student> list = new List<Student>();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"SELECT StudentNumber, StudentName, StudentSurname, DateOfBirth, Gender, PhoneNumber, Address, ModuleCode FROM tbl_Student WHERE StudentNumber='{id}'", conn);
+
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Student s = new Student(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), Convert.ToInt32(reader[5]), reader[6].ToString());
+                    list.Add(s);
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return list;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }

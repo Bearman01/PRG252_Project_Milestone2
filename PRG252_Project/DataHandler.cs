@@ -80,6 +80,36 @@ namespace PRG252_Project
             }
         }
 
+        public List<Student> ViewModule()
+        {
+            List<Student> Modlist = new List<Student>();
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"SELECT ModuleCode, ModuleName, ModuleDescription, Resource FROM tbl_Module", conn);
+
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Student m = new Student(Convert.ToInt32(reader[0]), reader[1].ToString(), reader[2].ToString(), reader[3].ToString());
+                    Modlist.Add(m);
+                }
+                return Modlist;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return Modlist;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        } 
+
         public List<Student> Search(int id)
         {
             List<Student> list = new List<Student>();
@@ -103,6 +133,25 @@ namespace PRG252_Project
             {
                 MessageBox.Show(ex.Message);
                 return list;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void DeleteStudent(int number)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand($"DELETE from tbl_Student Where StudentNumber = {number}", conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Student Data Successfully Deleted");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             finally
             {

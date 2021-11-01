@@ -13,6 +13,7 @@ namespace PRG252_Project
     public partial class Main : Form
     {
         List<Student> list = new List<Student>();
+        List<Student> Modlist = new List<Student>();
         DataHandler dh = new DataHandler();
 
         public Main()
@@ -40,6 +41,11 @@ namespace PRG252_Project
         {
             new Login().Show();
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            dh.DeleteStudent(int.Parse(txtSearch.Text));
         }
     }
 }

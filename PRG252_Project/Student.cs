@@ -17,18 +17,18 @@ namespace PRG252_Project
          int phone;
          string address;
 
-        //int moduleCode;
-        //string moduleName;
-        //string moduleDescription;
-        //string link;
+        int moduleCode;
+        string moduleName;
+        string moduleDescription;
+        string link;
 
-        //public Student(int moduleCode, string moduleName, string moduleDescription, string link)
-        //{
-        //    this.moduleCode = moduleCode;
-        //    this.moduleName = moduleName;
-        //    this.moduleDescription = moduleDescription;
-        //    this.link = link;
-        //}
+        public Student(int moduleCode, string moduleName, string moduleDescription, string link)
+        {
+            this.moduleCode = moduleCode;
+            this.moduleName = moduleName;
+            this.moduleDescription = moduleDescription;
+            this.link = link;
+        }
 
         public Student(int number, string name, string surname, string dob, string gender, int phone, string address)
         {

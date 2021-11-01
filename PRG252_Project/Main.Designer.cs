@@ -38,7 +38,9 @@ namespace PRG252_Project
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.studentView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStudentID2
@@ -72,7 +74,7 @@ namespace PRG252_Project
             // studentView
             // 
             this.studentView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.studentView.Location = new System.Drawing.Point(31, 52);
+            this.studentView.Location = new System.Drawing.Point(0, 19);
             this.studentView.Name = "studentView";
             this.studentView.Size = new System.Drawing.Size(405, 307);
             this.studentView.TabIndex = 25;
@@ -81,7 +83,7 @@ namespace PRG252_Project
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(305, 365);
+            this.button4.Location = new System.Drawing.Point(305, 393);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(131, 58);
             this.button4.TabIndex = 24;
@@ -102,17 +104,18 @@ namespace PRG252_Project
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(168, 365);
+            this.btnDelete.Location = new System.Drawing.Point(168, 393);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(131, 58);
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(31, 365);
+            this.btnUpdate.Location = new System.Drawing.Point(31, 393);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(131, 58);
             this.btnUpdate.TabIndex = 30;
@@ -129,19 +132,29 @@ namespace PRG252_Project
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.studentView);
+            this.groupBox1.Location = new System.Drawing.Point(31, 67);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(405, 320);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Student Information";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(481, 441);
+            this.ClientSize = new System.Drawing.Size(459, 473);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblStudentID2);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.studentView);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -150,6 +163,7 @@ namespace PRG252_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.studentView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +180,6 @@ namespace PRG252_Project
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
